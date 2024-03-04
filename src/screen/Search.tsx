@@ -10,19 +10,19 @@ import React, { useState } from "react";
 import { getWeatherByCity } from "../utils/api/getApis";
 import { WeatherType } from "../utils/types";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useNavigation, NavigationProp } from "@react-navigation/native";
+import {
+  useNavigation,
+  NavigationProp,
+  ParamListBase,
+} from "@react-navigation/native";
 import WeatherData from "../components/WeatherData";
-
-interface WeatherDetailsParams {
-  data: WeatherType;
-}
 
 export default function Search() {
   const [text, setText] = useState("");
   const [weatherData, setWeatherData] = useState<WeatherType>();
   const [disabled, setDisabled] = useState(false);
 
-  const { navigate } = useNavigation();
+  const { navigate } = useNavigation<NavigationProp<ParamListBase>>();
 
   function handleSearch() {
     if (text) {

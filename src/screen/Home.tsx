@@ -59,9 +59,11 @@ export default function Home() {
           ItemSeparatorComponent={itemSeparatorComponent}
         />
       ) : (
-        <Text style={{ fontSize: 20, fontWeight: "bold" }}>
-          no favorites Cities
-        </Text>
+        <View style={{ alignItems: "center", justifyContent: "center" }}>
+          <Text style={{ fontSize: 20, fontWeight: "bold" }}>
+            no favorites Cities
+          </Text>
+        </View>
       )}
     </View>
   );

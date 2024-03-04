@@ -106,7 +106,7 @@ export default function Search() {
           opacity: disabled ? 0.3 : 1,
         }}
       >
-        <Text>Search </Text>
+        <Text>{disabled ? "loading..." : "Search"} </Text>
       </TouchableOpacity>
       {weatherData ? (
         <View

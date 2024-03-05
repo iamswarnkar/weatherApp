@@ -1,7 +1,11 @@
 import { View, Text, TouchableOpacity, FlatList } from "react-native";
 import React, { useCallback, useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useNavigation } from "@react-navigation/native";
+import {
+  useNavigation,
+  ParamListBase,
+  NavigationProp,
+} from "@react-navigation/native";
 import { WeatherType } from "../utils/types";
 import WeatherData from "../components/WeatherData";
 
@@ -9,7 +13,7 @@ const keyExtractor = (item: WeatherType) => item.id.toString();
 
 export default function Home() {
   const [favorites, setFavorites] = useState<WeatherType[]>();
-  const { navigate } = useNavigation();
+  const { navigate } = useNavigation<NavigationProp<ParamListBase>>();
 
   const navigateToSearch = () => {
     navigate("Search");

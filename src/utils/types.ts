@@ -51,3 +51,9 @@ export interface Wind {
   speed: number;
   deg: number;
 }
+
+export interface Cities {
+  id: string;
+  name: string;
+  state: string;
+}

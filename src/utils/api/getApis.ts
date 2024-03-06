@@ -1,16 +1,10 @@
-const url = "https://open-weather13.p.rapidapi.com/city";
-const options = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": "3da2767f2fmsh2f66bce08ff5212p16301bjsn6f207247ca93",
-    "X-RapidAPI-Host": "open-weather13.p.rapidapi.com",
-  },
-};
+const URL = "https://api.openweathermap.org/data/2.5/weather?";
+const APIKEY = "46a9246bebba16d42b36aac3fc3ba8af";
 
 export async function getWeatherByCity(city: string) {
-  return await fetch(`${url}/${city}`, options);
+  return await fetch(`${URL}q=${city.replace(/\s+/g, "")}&appid=${APIKEY}`);
 }
 
-export async function getWeatherByLatAndLog(city: string) {
-  return await fetch(`${url}/${city}`, options);
+export async function getWeatherByLatAndLog(lat: number, lon: number) {
+  return await fetch(`${URL}lat=${lat}&lon=${lon}&appid=${APIKEY}`);
 }

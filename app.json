@@ -15,13 +15,20 @@
     "ios": {
       "supportsTablet": true
     },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow to use your location."
+        }
+      ]
+    ],
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.iamswarnkar.weatherApp",
-      "enableDangerousExperimentalLeanBuilds": true
+      "package": "com.iamswarnkar.weatherApp"
     },
     "web": {
       "favicon": "./assets/favicon.png"

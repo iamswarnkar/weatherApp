@@ -12,15 +12,15 @@ export default function WeatherData({ weatherData }: Props) {
       <Text>City name: {weatherData.name}</Text>
       <Text>
         City Tempracher:
-        {Math.ceil(((weatherData.main.temp - 32) * 5) / 9)}° C
+        {Math.ceil(weatherData.main.temp - 273)}° C
       </Text>
       <Text>
         today max Tempracher:
-        {Math.ceil(((weatherData.main.temp_max - 32) * 5) / 9)}° C
+        {Math.ceil(weatherData.main.temp_max - 273)}° C
       </Text>
       <Text>
         today min Tempracher:
-        {Math.ceil(((weatherData.main.temp_min - 32) * 5) / 9)}° C
+        {Math.ceil(weatherData.main.temp_min - 273)}° C
       </Text>
     </View>
   );
